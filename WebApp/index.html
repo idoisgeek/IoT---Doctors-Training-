@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simedx</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="side-menu">
+            <div class="menu-header">
+                <div class="company-branding">
+                    <img src="images/company-logo.png" alt="Company Logo" class="company-logo">
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-section="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" data-section="about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#" data-section="services"><i class="fas fa-cogs"></i> Manage Simulations</a></li>
+                    <li><a href="#" data-section="start-simulation"><i class="fas fa-play-circle"></i> Start Simulation</a></li>
+                    <li><a href="#" data-section="contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <section class="content-section" id="home-section" data-section="home">
+                <div class="header-section">
+                    <h1><i class="fas fa-rocket"></i> Welcome to Doctor Simulation App</h1>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="welcome-content">
+                    <h2>Select a section from the menu to get started</h2>
+                </div>
+            </section>
+
+            <section class="content-section" id="services-section" data-section="services">
+                <div class="header-section">
+                    <h1><i class="fas fa-cogs"></i> Manage Simulations</h1>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="services-section">
+                    <div class="prompt-creator">
+                        <h2><i class="fas fa-magic"></i> Create New Simulation Case</h2>
+                        <div class="prompt-form">
+                            <input type="text" id="promptName" placeholder="Enter case name..." class="prompt-input">
+                            <textarea id="promptInput" placeholder="Enter description of the case here..."></textarea>
+                            <button id="createPrompt" class="btn-primary">
+                                <i class="fas fa-plus"></i> Create Case
+                            </button>
+                        </div>
+                        <div id="confirmDialog" class="confirm-dialog">
+                            <div class="confirm-dialog-content">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Confirm Delete</h3>
+                                <p>Are you sure you want to delete this prompt?</p>
+                                <div class="confirm-dialog-buttons">
+                                    <button id="confirmDelete" class="btn-danger">Delete</button>
+                                    <button id="cancelDelete" class="btn-secondary">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="prompt-history">
+                        <div id="editPromptModal" class="modal">
+                          <div class="modal-content">
+                              <h2><i class="fas fa-edit"></i> Edit Simulation Case</h2>
+                              <div class="prompt-form">
+                                  <!-- Replace the input with a select dropdown -->
+                                  <label for="editPromptSelect">Choose Existing Case:</label>
+                                  <select id="editPromptSelect" class="prompt-select">
+                                      <!-- This will be populated dynamically -->
+                                  </select>
+                                  <textarea id="editPromptText" placeholder="Enter description of the case here..."></textarea>
+                                  <div class="modal-actions">
+                                      <button id="saveEditPrompt" class="btn-primary"><i class="fas fa-save"></i> Save Changes</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                    </div>
+
+                    <div class="prompt-history">
+                        <h2><i class="fas fa-history"></i> Case History</h2>
+                        <div class="storage-settings">
+                            <label for="storageType">Storage Type:</label>
+                            <select id="storageType">
+                                <option value="file">File Storage (Local Directory)</option>
+                                <option value="online">Online Storage (Remote Server)</option>
+                            </select>
+                        </div>
+                        <div class="history-filters">
+                            <input type="text" id="searchHistory" placeholder="Search cases...">
+                            <select id="sortHistory">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                            </select>
+                        </div>
+                        <div id="promptsList" class="prompts-list">
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="start-simulation-section" data-section="start-simulation">
+                <div class="header-section">
+                    <h1><i class="fas fa-play-circle"></i> Start Simulation</h1>
+                    <div class="decorative-line"></div>
+                </div>
+                <div class="start-simulation-content">
+                    <label for="simulationSelect">Choose Simulation Case:</label>
+                    <select id="simulationSelect" class="prompt-select">
+                        </select>
+                    <button id="startSimulationBtn" class="btn-primary" style="margin-top: 1rem;">
+                        <i class="fas fa-play"></i> Start Simulation
+                    </button>
+                </div>
+            </section>
+
+            <section class="content-section" id="about-section" data-section="about">
+                <div class="header-section">
+                    <h1><i class="fas fa-info-circle"></i> About</h1>
+                    <div class="decorative-line"></div>
+                </div>
+                <h3>The Doctor Simulation App provides a virtual space for doctors to practice diagnosing diseases.<br> Designed to address the lack of realistic diagnostic simulations, it helps medical professionals refine their skills and improve clinical decision-making in a safe, flexible environment.</h3>
+            </section>
+
+            <section class="content-section" id="contact-section" data-section="contact">
+                <div class="header-section">
+                    <h1><i class="fas fa-envelope"></i> Contact</h1>
+                    <div class="decorative-line"></div>
+                </div>
+                <h3>For further information please contact:<br>
+                  <a href="mailto:IoT_doctor_simulation@campus.technion.ac.l">IoT_doctor_simulation@campus.technion.ac.il</a>
+                  </h3>
+            </section>
+        </div>
+    </div>
+
+    <div id="chatWindow" class="chat-window">
+        <div class="chat-header">
+            <h3><i class="fas fa-comment"></i> Chat Conversation</h3>
+            <button class="btn-close" id="closeChatBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            </div>
+        <div class="chat-status" id="chatStatus">
+            <i class="fas fa-spinner fa-spin"></i> Generating response...
+        </div>
+        <div class="chat-input-container">
+            <textarea id="chatInput" placeholder="Type your message..."></textarea>
+            <button id="sendMessage" class="btn-primary">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/storage-service.js"></script>
+    <script src="js/chat-service.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

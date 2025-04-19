@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #88304e;     /* Deep red for primary elements */
+    --secondary-color: #B22222;   /* Lighter red for interactive elements */
+    --accent-color: #88304e;      /* Crimson for accents and highlights */
+    --bg-color: #ffffff;          /* Pure white background */
+    --text-color: #333333;        /* Dark gray for regular text */
+    --card-shadow: 0 4px 6px rgba(139, 0, 0, 0.1);
+    --hover-color: #800000;       /* Darker red for hover states */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.side-menu {
+    width: 250px;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 20px 0;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.side-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.menu-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.company-branding {
+    display: flex;
+    justify-content: center;
+}
+
+.company-logo {
+    width: 230px;
+    height: auto;
+    object-fit: contain;
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a i {
+    width: 20px;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: rgba(139, 0, 0, 0.1);
+    color: var(--primary-color);
+    padding-left: 30px;
+}
+
+nav ul li a.active {
+    background-color: rgba(139, 0, 0, 0.15);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--primary-color);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    transform: scaleY(1);
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.header-section {
+    margin-bottom: 40px;
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+.header-section h1 {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.header-section h1 i {
+    color: var(--accent-color);
+}
+
+.decorative-line {
+    height: 3px;
+    width: 100px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    margin-top: 10px;
+}
+
+.services-section {
+    margin: 40px 0;
+    display: grid;
+    gap: 30px;
+    width: 100%;
+}
+
+.prompt-creator, .prompt-history {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+.prompt-creator h2, .prompt-history h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prompt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prompt-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#promptInput {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--hover-color);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Confirmation Dialog */
+.confirm-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-dialog.active {
+    display: flex;
+}
+
+.confirm-dialog-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+.confirm-dialog h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.confirm-dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-danger {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background: var(--secondary-color);
+}
+
+.prompt-name {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.storage-settings {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.storage-settings label {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.storage-settings select {
+    padding: 8px;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+}
+
+.history-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#searchHistory {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+#sortHistory {
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+}
+
+.prompts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prompt-item {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.prompt-content {
+    flex: 1;
+}
+
+.prompt-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+/* Chat Window Styles */
+.chat-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.chat-window.active {
+    display: flex;
+}
+
+.chat-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.btn-close:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.message.user {
+    background: rgba(139, 0, 0, 0.1);
+    color: var(--text-color);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.message.assistant {
+    background: white;
+    border: 1px solid rgba(139, 0, 0, 0.2);
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.message.error {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    border: 1px solid #ffcccc;
+    align-self: center;
+    font-style: italic;
+    text-align: center;
+    max-width: 90%;
+}
+
+.chat-status {
+    padding: 15px;
+    background: rgba(139, 0, 0, 0.05);
+    color: var(--text-color);
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9em;
+}
+
+.chat-status.active {
+    display: flex;
+}
+
+.chat-input-container {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid rgba(139, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-container textarea {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid rgba(139, 0, 0, 0.2);
+    border-radius: 6px;
+    resize: none;
+    height: 45px;
+    font-family: inherit;
+    font-size: 0.95em;
+    line-height: 1.4;
+    transition: border-color 0.3s ease;
+}
+
+.chat-input-container textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.chat-input-container button {
+    padding: 10px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+.prompt-text {
+    color: var(--text-color);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.prompt-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-delete {
+    color: var(--accent-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.btn-delete:hover {
+    color: #c0392b;
+}
+
+.prompt-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 2.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.info-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section p {
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.decorative-shape {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    border-radius: 50%;
+    opacity: 0.1;
+}

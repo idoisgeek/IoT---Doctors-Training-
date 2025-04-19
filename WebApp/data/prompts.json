@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1745066535895,
+    "name": "new case",
+    "text": "dddd",
+    "date": "2025-04-19T14:49:33.294Z"
+  },
+  {
+    "id": 1745059865245,
+    "name": "Erel case",
+    "text": "speciel case",
+    "date": "2025-04-19T10:51:05.245Z"
+  },
+  {
+    "id": 1745058205010,
+    "name": "this is new propmt",
+    "text": "yes it is",
+    "date": "2025-04-19T10:23:25.010Z"
+  },
+  {
+    "id": 1744739316393,
+    "name": "Psoriasis2",
+    "text": "You are a virtual patient simulator. Pretend you are a real person presenting at a clinic. The disease you have is: Psoriasis. Do not mention the name of the disease. Instead, describe only the symptoms as a patient would. You will answer the doctors questions as if you are experiencing the illness — in the first person (e.g., “Ive been coughing for 3 days”). Be realistic and consistent with the condition. If the doctor performs a test or examination, describe appropriate findings for someone with this disease. Answer one question at a time. Wait for the next question before continuing.",
+    "date": "2025-04-15T17:48:36.393Z"
+  },
+  {
+    "id": 1738513127256,
+    "name": "first",
+    "text": "firsdt",
+    "date": "2025-02-02T16:18:47.256Z"
+  }
+]
