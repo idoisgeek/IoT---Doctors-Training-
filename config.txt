@@ -1,0 +1,1038 @@
+Last login: Thu May  8 14:35:56 on ttys001
+/dev/fd/12:18: command not found: compdef
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@rasberrypi.local
+sd
+^C
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+The authenticity of host 'raspberrypi.local (10.100.102.21)' can't be established.
+ED25519 key fingerprint is SHA256:T2AqneNArSOBW5ejYdtuiJWo9eyjtAiWy94EUlD9+/I.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'raspberrypi.local' (ED25519) to the list of known hosts.
+admin@raspberrypi.local's password: 
+Permission denied, please try again.
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 02:37:19 2025
+admin@raspberrypi:~ $ ךד
+-bash: ךד: command not found
+admin@raspberrypi:~ $ ls
+Bookshelf  Documents  LCD-show        Music     Public     Videos
+Desktop    Downloads  MFRC522-python  Pictures  Templates
+admin@raspberrypi:~ $ sudo /boot/config.txt
+/boot/config.txt: 71: [cm4]: not found
+/boot/config.txt: 77: [all]: not found
+/boot/config.txt: 79: [pi4]: not found
+/boot/config.txt: 83: [all]: not found
+/boot/config.txt: 92: hdmi_cvt: not found
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 03:02:45 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 03:04:30 2025
+admin@raspberrypi:~ $ ls
+Bookshelf  Documents  LCD-show        Music     Public     Videos
+Desktop    Downloads  MFRC522-python  Pictures  Templates
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ gpio readall
+ +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ |     |     |    3.3v |      |   |  1 || 2  |   |      | 5v      |     |     |
+ |   2 |   8 |   SDA.1 | ALT0 | 1 |  3 || 4  |   |      | 5v      |     |     |
+ |   3 |   9 |   SCL.1 | ALT0 | 1 |  5 || 6  |   |      | 0v      |     |     |
+ |   4 |   7 | GPIO. 7 |   IN | 1 |  7 || 8  | 1 | ALT5 | TxD     | 15  | 14  |
+ |     |     |      0v |      |   |  9 || 10 | 1 | ALT5 | RxD     | 16  | 15  |
+ |  17 |   0 | GPIO. 0 |   IN | 1 | 11 || 12 | 0 | IN   | GPIO. 1 | 1   | 18  |
+ |  27 |   2 | GPIO. 2 |   IN | 0 | 13 || 14 |   |      | 0v      |     |     |
+ |  22 |   3 | GPIO. 3 |   IN | 0 | 15 || 16 | 0 | IN   | GPIO. 4 | 4   | 23  |
+ |     |     |    3.3v |      |   | 17 || 18 | 1 | OUT  | GPIO. 5 | 5   | 24  |
+ |  10 |  12 |    MOSI | ALT0 | 1 | 19 || 20 |   |      | 0v      |     |     |
+ |   9 |  13 |    MISO | ALT0 | 0 | 21 || 22 | 1 | OUT  | GPIO. 6 | 6   | 25  |
+ |  11 |  14 |    SCLK | ALT0 | 0 | 23 || 24 | 0 | OUT  | CE0     | 10  | 8   |
+ |     |     |      0v |      |   | 25 || 26 | 1 | OUT  | CE1     | 11  | 7   |
+ |   0 |  30 |   SDA.0 |   IN | 1 | 27 || 28 | 1 | IN   | SCL.0   | 31  | 1   |
+ |   5 |  21 | GPIO.21 |   IN | 1 | 29 || 30 |   |      | 0v      |     |     |
+ |   6 |  22 | GPIO.22 |   IN | 1 | 31 || 32 | 0 | IN   | GPIO.26 | 26  | 12  |
+ |  13 |  23 | GPIO.23 |   IN | 0 | 33 || 34 |   |      | 0v      |     |     |
+ |  19 |  24 | GPIO.24 | ALT4 | 0 | 35 || 36 | 1 | OUT  | GPIO.27 | 27  | 16  |
+ |  26 |  25 | GPIO.25 |   IN | 0 | 37 || 38 | 0 | ALT4 | GPIO.28 | 28  | 20  |
+ |     |     |      0v |      |   | 39 || 40 | 0 | ALT4 | GPIO.29 | 29  | 21  |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+ +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/1 (Thu 2025-05-08 03:09:49 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 03:11:34 2025
+admin@raspberrypi:~ $ dmesg | grep spi
+[    4.487724] ads7846 spi0.1: failed to request pendown GPIO
+[    4.488894] ads7846 spi0.1: probe with driver ads7846 failed with error -16
+[    4.563891] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.564076] pinctrl-bcm2835 fe200000.gpio: pin gpio17 already requested by fe215080.spi; cannot claim for spi0.0
+[    4.564088] pinctrl-bcm2835 fe200000.gpio: error -EINVAL: pin-17 (spi0.0)
+[    4.564105] fb_ili9486 spi0.0: Error applying setting, reverse things back
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/1 (Thu 2025-05-08 03:32:12 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 03:33:56 2025
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/1 (Thu 2025-05-08 03:39:39 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 03:41:24 2025
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    3.403571] spi-bcm2835aux fe215080.spi: could not register SPI host: -16
+[    3.403595] spi-bcm2835aux fe215080.spi: probe with driver spi-bcm2835aux failed with error -16
+[    3.405316] spi spi0.1: cannot find GPIO chip pinctrl-bcm2835, deferring
+[    3.405356] spi_master spi0: Failed to setup device: -517
+[    3.405367] spi-bcm2835 fe204000.spi: can't setup spi0.1, status -517
+[    3.405372] spi_master spi0: spi_device register error /soc/spi@7e204000/tft35a-ts@1
+[    3.405391] spi_master spi0: Failed to create SPI device for /soc/spi@7e204000/tft35a-ts@1
+[    4.386498] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.386645] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.386655] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.386662] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.386671] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.386677] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.386682] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    4.932682] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ ls
+Bookshelf  Documents  LCD-show        Music     Public     Videos
+Desktop    Downloads  MFRC522-python  Pictures  Templates
+admin@raspberrypi:~ $ cd Desktop
+admin@raspberrypi:~/Desktop $ ls
+GUI_Sounds.desktop
+admin@raspberrypi:~/Desktop $ ./GUI_Sounds.desktop
+./GUI_Sounds.desktop: line 1: [Desktop: command not found
+./GUI_Sounds.desktop: line 3: GUI_Sounds.py: command not found
+./GUI_Sounds.desktop: line 4: -e: command not found
+admin@raspberrypi:~/Desktop $ GUI_Sounds.desktop
+-bash: GUI_Sounds.desktop: command not found
+admin@raspberrypi:~/Desktop $ ls
+GUI_Sounds.desktop
+admin@raspberrypi:~/Desktop $ ./GUI_Sounds.desktop
+./GUI_Sounds.desktop: line 1: [Desktop: command not found
+./GUI_Sounds.desktop: line 3: GUI_Sounds.py: command not found
+./GUI_Sounds.desktop: line 4: -e: command not found
+admin@raspberrypi:~/Desktop $ cd ..
+admin@raspberrypi:~ $ ls
+Bookshelf  Documents  LCD-show        Music     Public     Videos
+Desktop    Downloads  MFRC522-python  Pictures  Templates
+admin@raspberrypi:~ $ cd Documents
+admin@raspberrypi:~/Documents $ ls
+DocTraining
+admin@raspberrypi:~/Documents $ cd DcoTraining
+-bash: cd: DcoTraining: No such file or directory
+admin@raspberrypi:~/Documents $ cd DocTraining
+admin@raspberrypi:~/Documents/DocTraining $ ls
+doctors_training  readingRFCPP  readingRFPy
+admin@raspberrypi:~/Documents/DocTraining $ cd readingRFPy
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ ls
+ 2530_AV.wav         MFRC522-python                    sounds_manager2.py
+ GUI.py             'MIKA - Relax, Take It Easy.wav'   sounds_manager.py
+ GUI_Sounds_org.py  'Never Gonna Give You Up.wav'     'Take On Me.wav'
+ GUI_Sounds.py       rfid_read.py                      venv
+ icon.png            sounds
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ python GUI_Sounds.py
+Traceback (most recent call last):
+  File "/home/admin/Documents/DocTraining/readingRFPy/GUI_Sounds.py", line 13, in <module>
+    from mfrc522 import SimpleMFRC522
+ModuleNotFoundError: No module named 'mfrc522'
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ cd ~
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/1 (Thu 2025-05-08 03:47:31 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 03:49:16 2025
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    3.476154] spi spi0.1: cannot find GPIO chip pinctrl-bcm2835, deferring
+[    3.476181] spi_master spi0: Failed to setup device: -517
+[    3.476188] spi-bcm2835 fe204000.spi: can't setup spi0.1, status -517
+[    3.476193] spi_master spi0: spi_device register error /soc/spi@7e204000/tft35a-ts@1
+[    3.476215] spi_master spi0: Failed to create SPI device for /soc/spi@7e204000/tft35a-ts@1
+[    4.627309] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.630991] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.631016] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.631022] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.631028] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.631034] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.631039] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    5.190524] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/1 (Thu 2025-05-08 03:54:08 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 03:55:53 2025
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.408386] ads7846 spi0.1: supply vcc not found, using dummy regulator
+[    4.423189] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.423688] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.423730] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.423738] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.423744] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.423753] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.423759] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    4.454870] ads7846 spi0.1: touchscreen, irq 45
+[    4.510472] input: ADS7846 Touchscreen as /devices/platform/soc/fe204000.spispi_master/spi0/spi0.1/input/input8
+[    4.995297] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 03:59:26 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:01:11 2025
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.529787] ads7846 spi0.1: supply vcc not found, using dummy regulator
+[    4.531675] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.538835] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.538859] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.538866] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.538872] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.538881] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.538886] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    4.538937] ads7846 spi0.1: touchscreen, irq 45
+[    4.539722] input: ADS7846 Touchscreen as /devices/platform/soc/fe204000.spispi_master/spi0/spi0.1/input/input8
+[    5.091750] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ cd Documents
+admin@raspberrypi:~/Documents $ ls
+DocTraining
+admin@raspberrypi:~/Documents $ cd DocTraining 
+admin@raspberrypi:~/Documents/DocTraining $ cd ~
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ cd Documents
+admin@raspberrypi:~/Documents $ cd DocTraining
+admin@raspberrypi:~/Documents/DocTraining $ ls
+doctors_training  readingRFCPP  readingRFPy
+admin@raspberrypi:~/Documents/DocTraining $ cd readingRFPy
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ ls
+ 2530_AV.wav         MFRC522-python                    sounds_manager2.py
+ GUI.py             'MIKA - Relax, Take It Easy.wav'   sounds_manager.py
+ GUI_Sounds_org.py  'Never Gonna Give You Up.wav'     'Take On Me.wav'
+ GUI_Sounds.py       rfid_read.py                      venv
+ icon.png            sounds
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ cd MFRC522-python
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ ls
+build  dist  LICENSE  mfrc522  mfrc522.egg-info  README.md  setup.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ cd mfrc522
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ ls
+__init__.py  MFRC522.py  SimpleMFRC522.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ nano SimpleMFRC522.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ cd ..
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ ls
+build  dist  LICENSE  mfrc522  mfrc522.egg-info  README.md  setup.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ python setup.py install
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:146: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+error: can't create or remove files in install directory
+
+The following error occurred while trying to add or remove files in the
+installation directory:
+
+    [Errno 13] Permission denied: '/usr/local/lib/python3.11/dist-packages/test-easy-install-1648.write-test'
+
+The installation directory you specified (via --install-dir, --prefix, or
+the distutils default setting) was:
+
+    /usr/local/lib/python3.11/dist-packages/
+
+Perhaps your account does not have write access to this directory?  If the
+installation directory is a system-owned directory, you may need to sign in
+as the administrator or "root" account.  If you do not have administrative
+access to this machine, you may wish to choose a different installation
+directory, preferably one that is listed in your PYTHONPATH environment
+variable.
+
+For information on other options, you may wish to consult the
+documentation at:
+
+  https://setuptools.pypa.io/en/latest/deprecated/easy_install.html
+
+Please make the appropriate changes for your system and try again.
+
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ sudo python setup.py install
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:146: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running bdist_egg
+running egg_info
+writing mfrc522.egg-info/PKG-INFO
+writing dependency_links to mfrc522.egg-info/dependency_links.txt
+writing requirements to mfrc522.egg-info/requires.txt
+writing top-level names to mfrc522.egg-info/top_level.txt
+reading manifest file 'mfrc522.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'mfrc522.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-aarch64/egg
+running install_lib
+running build_py
+copying mfrc522/SimpleMFRC522.py -> build/lib/mfrc522
+creating build/bdist.linux-aarch64/egg
+creating build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/MFRC522.py -> build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/SimpleMFRC522.py -> build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/__init__.py -> build/bdist.linux-aarch64/egg/mfrc522
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/MFRC522.py to MFRC522.cpython-311.pyc
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/SimpleMFRC522.py to SimpleMFRC522.cpython-311.pyc
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/__init__.py to __init__.cpython-311.pyc
+creating build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/PKG-INFO -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/SOURCES.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/dependency_links.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/requires.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/top_level.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating 'dist/mfrc522-0.0.7-py3.11.egg' and adding 'build/bdist.linux-aarch64/egg' to it
+removing 'build/bdist.linux-aarch64/egg' (and everything under it)
+Processing mfrc522-0.0.7-py3.11.egg
+Copying mfrc522-0.0.7-py3.11.egg to /usr/local/lib/python3.11/dist-packages
+Adding mfrc522 0.0.7 to easy-install.pth file
+
+Installed /usr/local/lib/python3.11/dist-packages/mfrc522-0.0.7-py3.11.egg
+Processing dependencies for mfrc522==0.0.7
+Searching for spidev==3.5
+Best match: spidev 3.5
+Adding spidev 3.5 to easy-install.pth file
+
+Using /usr/lib/python3/dist-packages
+Searching for RPi.GPIO==0.7.1a4
+Best match: RPi.GPIO 0.7.1a4
+Adding RPi.GPIO 0.7.1a4 to easy-install.pth file
+
+Using /usr/lib/python3/dist-packages
+Finished processing dependencies for mfrc522==0.0.7
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 04:07:53 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:09:37 2025
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.341285] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.341425] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.341434] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.341440] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.341445] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.341451] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.341456] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    4.346900] ads7846 spi0.1: supply vcc not found, using dummy regulator
+[    4.347390] ads7846 spi0.1: touchscreen, irq 45
+[    4.348469] input: ADS7846 Touchscreen as /devices/platform/soc/fe204000.spispi_master/spi0/spi0.1/input/input8
+[    4.909172] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ cd Documents
+admin@raspberrypi:~/Documents $ cd DocTraining
+admin@raspberrypi:~/Documents/DocTraining $ cd readingRFPy
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ cd MFRC522-python
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ cd mfrc522
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ nano SimpleMFRC522.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ ls
+__init__.py  MFRC522.py  SimpleMFRC522.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ cd ..
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ ls
+build  dist  LICENSE  mfrc522  mfrc522.egg-info  README.md  setup.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ sudo python setup.py install
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:146: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running bdist_egg
+running egg_info
+writing mfrc522.egg-info/PKG-INFO
+writing dependency_links to mfrc522.egg-info/dependency_links.txt
+writing requirements to mfrc522.egg-info/requires.txt
+writing top-level names to mfrc522.egg-info/top_level.txt
+reading manifest file 'mfrc522.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'mfrc522.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-aarch64/egg
+running install_lib
+running build_py
+copying mfrc522/SimpleMFRC522.py -> build/lib/mfrc522
+creating build/bdist.linux-aarch64/egg
+creating build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/MFRC522.py -> build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/SimpleMFRC522.py -> build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/__init__.py -> build/bdist.linux-aarch64/egg/mfrc522
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/MFRC522.py to MFRC522.cpython-311.pyc
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/SimpleMFRC522.py to SimpleMFRC522.cpython-311.pyc
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/__init__.py to __init__.cpython-311.pyc
+creating build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/PKG-INFO -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/SOURCES.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/dependency_links.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/requires.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/top_level.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating 'dist/mfrc522-0.0.7-py3.11.egg' and adding 'build/bdist.linux-aarch64/egg' to it
+removing 'build/bdist.linux-aarch64/egg' (and everything under it)
+Processing mfrc522-0.0.7-py3.11.egg
+Removing /usr/local/lib/python3.11/dist-packages/mfrc522-0.0.7-py3.11.egg
+Copying mfrc522-0.0.7-py3.11.egg to /usr/local/lib/python3.11/dist-packages
+mfrc522 0.0.7 is already the active version in easy-install.pth
+
+Installed /usr/local/lib/python3.11/dist-packages/mfrc522-0.0.7-py3.11.egg
+Processing dependencies for mfrc522==0.0.7
+Searching for spidev==3.5
+Best match: spidev 3.5
+Adding spidev 3.5 to easy-install.pth file
+
+Using /usr/lib/python3/dist-packages
+Searching for RPi.GPIO==0.7.1a4
+Best match: RPi.GPIO 0.7.1a4
+Adding RPi.GPIO 0.7.1a4 to easy-install.pth file
+
+Using /usr/lib/python3/dist-packages
+Finished processing dependencies for mfrc522==0.0.7
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ sudo nano /boot/config.txt 
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ dmesg | grep -i spi
+[    4.341285] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.341425] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.341434] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.341440] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.341445] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.341451] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.341456] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    4.346900] ads7846 spi0.1: supply vcc not found, using dummy regulator
+[    4.347390] ads7846 spi0.1: touchscreen, irq 45
+[    4.348469] input: ADS7846 Touchscreen as /devices/platform/soc/fe204000.spispi_master/spi0/spi0.1/input/input8
+[    4.909172] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ sudo nano /boot/config.txt 
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 04:18:06 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:19:50 2025
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    3.371444] spi-bcm2835aux fe215080.spi: could not register SPI host: -16
+[    3.371468] spi-bcm2835aux fe215080.spi: probe with driver spi-bcm2835aux failed with error -16
+[    4.443588] ads7846 spi0.1: supply vcc not found, using dummy regulator
+[    4.448841] ads7846 spi0.1: touchscreen, irq 45
+[    4.449212] input: ADS7846 Touchscreen as /devices/platform/soc/fe204000.spispi_master/spi0/spi0.1/input/input8
+[    4.449439] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.449658] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.449673] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.449680] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.449686] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.449694] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.449704] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    4.996282] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ ls /dev/spi*
+ls: cannot access '/dev/spi*': No such file or directory
+admin@raspberrypi:~ $ sudo ls /dev/spi*
+ls: cannot access '/dev/spi*': No such file or directory
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 04:24:35 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:26:20 2025
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.554201] ads7846 spi0.1: failed to request pendown GPIO
+[    4.554223] ads7846 spi0.1: probe with driver ads7846 failed with error -16
+[    4.775170] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.775313] pinctrl-bcm2835 fe200000.gpio: pin gpio17 already requested by fe215080.spi; cannot claim for spi0.0
+[    4.775327] pinctrl-bcm2835 fe200000.gpio: error -EINVAL: pin-17 (spi0.0)
+[    4.775348] fb_ili9486 spi0.0: Error applying setting, reverse things back
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/1 (Thu 2025-05-08 04:28:11 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:27:12 2025 from 10.100.102.25
+admin@raspberrypi:~ $ ls
+Bookshelf  Documents  LCD-show        Music     Public     Videos
+Desktop    Downloads  MFRC522-python  Pictures  Templates
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.336523] ads7846 spi0.1: failed to request pendown GPIO
+[    4.336540] ads7846 spi0.1: probe with driver ads7846 failed with error -16
+[    4.402030] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.402135] pinctrl-bcm2835 fe200000.gpio: pin gpio17 already requested by fe215080.spi; cannot claim for spi0.0
+[    4.402144] pinctrl-bcm2835 fe200000.gpio: error -EINVAL: pin-17 (spi0.0)
+[    4.402160] fb_ili9486 spi0.0: Error applying setting, reverse things back
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/0 (Thu 2025-05-08 04:30:04 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:29:55 2025
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 04:31:15 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+ssh: connect to host raspberrypi.local port 22: Operation timed out
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+ssh: connect to host raspberrypi.local port 22: Operation timed out
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+^[[Assh: connect to host raspberrypi.local port 22: Operation timed out
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+ssh: connect to host raspberrypi.local port 22: Operation timed out
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+ssh: connect to host raspberrypi.local port 22: Operation timed out
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+ssh: connect to host raspberrypi.local port 22: Operation timed out
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:43:10 2025
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo rebbot
+sudo: rebbot: command not found
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 04:51:27 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:43:11 2025 from 10.100.102.25
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.232706] ads7846 spi0.1: failed to request pendown GPIO
+[    4.232724] ads7846 spi0.1: probe with driver ads7846 failed with error -16
+[    4.294357] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.294447] pinctrl-bcm2835 fe200000.gpio: pin gpio17 already requested by fe215080.spi; cannot claim for spi0.0
+[    4.294455] pinctrl-bcm2835 fe200000.gpio: error -EINVAL: pin-17 (spi0.0)
+[    4.294470] fb_ili9486 spi0.0: Error applying setting, reverse things back
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/0 (Thu 2025-05-08 04:55:14 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:53:12 2025
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 04:56:41 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+ssh: connect to host raspberrypi.local port 22: Operation timed out
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:56:05 2025 from 10.100.102.25
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.273053] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.273411] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.273429] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.273436] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.273441] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.273447] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.273452] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    4.393232] ads7846 spi0.1: supply vcc not found, using dummy regulator
+[    4.396794] ads7846 spi0.1: touchscreen, irq 45
+[    4.397119] input: ADS7846 Touchscreen as /devices/platform/soc/fe204000.spispi_master/spi0/spi0.1/input/input8
+[    4.838681] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ ls /dev/spidev*
+/dev/spidev1.0
+admin@raspberrypi:~ $ cd ~/Documents/DocTraining/readingRFPy
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ ls
+ 2530_AV.wav         MFRC522-python                    sounds_manager2.py
+ GUI.py             'MIKA - Relax, Take It Easy.wav'   sounds_manager.py
+ GUI_Sounds_org.py  'Never Gonna Give You Up.wav'     'Take On Me.wav'
+ GUI_Sounds.py       rfid_read.py                      venv
+ icon.png            sounds
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ cd MFRC522-python
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ ls
+build  dist  LICENSE  mfrc522  mfrc522.egg-info  README.md  setup.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ cd mfrc522
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ ls
+__init__.py  MFRC522.py  SimpleMFRC522.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ nano SimpleMFRC522.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ ls
+__init__.py  MFRC522.py  SimpleMFRC522.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python/mfrc522 $ cd ..
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ ls
+build  dist  LICENSE  mfrc522  mfrc522.egg-info  README.md  setup.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ sudo python setup.py install
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:146: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running bdist_egg
+running egg_info
+writing mfrc522.egg-info/PKG-INFO
+writing dependency_links to mfrc522.egg-info/dependency_links.txt
+writing requirements to mfrc522.egg-info/requires.txt
+writing top-level names to mfrc522.egg-info/top_level.txt
+reading manifest file 'mfrc522.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'mfrc522.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-aarch64/egg
+running install_lib
+running build_py
+copying mfrc522/SimpleMFRC522.py -> build/lib/mfrc522
+creating build/bdist.linux-aarch64/egg
+creating build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/MFRC522.py -> build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/SimpleMFRC522.py -> build/bdist.linux-aarch64/egg/mfrc522
+copying build/lib/mfrc522/__init__.py -> build/bdist.linux-aarch64/egg/mfrc522
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/MFRC522.py to MFRC522.cpython-311.pyc
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/SimpleMFRC522.py to SimpleMFRC522.cpython-311.pyc
+byte-compiling build/bdist.linux-aarch64/egg/mfrc522/__init__.py to __init__.cpython-311.pyc
+creating build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/PKG-INFO -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/SOURCES.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/dependency_links.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/requires.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+copying mfrc522.egg-info/top_level.txt -> build/bdist.linux-aarch64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating 'dist/mfrc522-0.0.7-py3.11.egg' and adding 'build/bdist.linux-aarch64/egg' to it
+removing 'build/bdist.linux-aarch64/egg' (and everything under it)
+Processing mfrc522-0.0.7-py3.11.egg
+Removing /usr/local/lib/python3.11/dist-packages/mfrc522-0.0.7-py3.11.egg
+Copying mfrc522-0.0.7-py3.11.egg to /usr/local/lib/python3.11/dist-packages
+mfrc522 0.0.7 is already the active version in easy-install.pth
+
+Installed /usr/local/lib/python3.11/dist-packages/mfrc522-0.0.7-py3.11.egg
+Processing dependencies for mfrc522==0.0.7
+Searching for spidev==3.5
+Best match: spidev 3.5
+Adding spidev 3.5 to easy-install.pth file
+
+Using /usr/lib/python3/dist-packages
+Searching for RPi.GPIO==0.7.1a4
+Best match: RPi.GPIO 0.7.1a4
+Adding RPi.GPIO 0.7.1a4 to easy-install.pth file
+
+Using /usr/lib/python3/dist-packages
+Finished processing dependencies for mfrc522==0.0.7
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy/MFRC522-python $ cd ~
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+admin@raspberrypi:~ $ sudo reboot
+
+Broadcast message from root@raspberrypi on pts/0 (Thu 2025-05-08 05:05:32 HDT):
+
+The system will reboot now!
+
+admin@raspberrypi:~ $ Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 04:58:26 2025
+admin@raspberrypi:~ $ ls /dev/spidev*
+/dev/spidev1.0
+admin@raspberrypi:~ $ dmesg | grep -i spi
+[    4.477752] ads7846 spi0.1: supply vcc not found, using dummy regulator
+[    4.478294] ads7846 spi0.1: touchscreen, irq 45
+[    4.480695] input: ADS7846 Touchscreen as /devices/platform/soc/fe204000.spispi_master/spi0/spi0.1/input/input8
+[    4.498562] SPI driver fb_ili9486 has no spi_device_id for ilitek,ili9486
+[    4.498711] fb_ili9486 spi0.0: fbtft_property_value: regwidth = 16
+[    4.498723] fb_ili9486 spi0.0: fbtft_property_value: buswidth = 8
+[    4.498730] fb_ili9486 spi0.0: fbtft_property_value: debug = 0
+[    4.498735] fb_ili9486 spi0.0: fbtft_property_value: rotate = 90
+[    4.498748] fb_ili9486 spi0.0: fbtft_property_value: fps = 30
+[    4.498754] fb_ili9486 spi0.0: fbtft_property_value: txbuflen = 32768
+[    5.060115] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 32 KiB buffer memory, fps=31, spi0.0 at 16 MHz
+admin@raspberrypi:~ $ cd ~/Documents/DocTraining/readingRFPy
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ ls
+ 2530_AV.wav         MFRC522-python                    sounds_manager2.py
+ GUI.py             'MIKA - Relax, Take It Easy.wav'   sounds_manager.py
+ GUI_Sounds_org.py  'Never Gonna Give You Up.wav'     'Take On Me.wav'
+ GUI_Sounds.py       rfid_read.py                      venv
+ icon.png            sounds
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ pyhton sound_manager2.py
+-bash: pyhton: command not found
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ pyhton sounds_manager2.py
+-bash: pyhton: command not found
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ pyhton sounds_manager2.py
+-bash: pyhton: command not found
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ python sounds_manager2.py
+/usr/local/lib/python3.11/dist-packages/mfrc522-0.0.7-py3.11.egg/mfrc522/MFRC522.py:151: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.front
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.surround21
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.surround21
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.surround40
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.surround41
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.surround50
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.surround51
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.surround71
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.iec958
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.iec958
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.iec958
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.hdmi
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.modem
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+ALSA lib pcm_oss.c:397:(_snd_pcm_oss_open) Cannot open device /dev/dsp
+ALSA lib pcm_oss.c:397:(_snd_pcm_oss_open) Cannot open device /dev/dsp
+ALSA lib pcm_a52.c:1001:(_snd_pcm_a52_open) a52 is only for playback
+ALSA lib conf.c:5670:(snd_config_expand) Unknown parameters {AES0 0x6 AES1 0x82 AES2 0x0 AES3 0x2 CARD 0}
+ALSA lib pcm.c:2666:(snd_pcm_open_noupdate) Unknown PCM iec958:{AES0 0x6 AES1 0x82 AES2 0x0 AES3 0x2 CARD 0}
+ALSA lib confmisc.c:160:(snd_config_get_card) Invalid field card
+ALSA lib pcm_usb_stream.c:482:(_snd_pcm_usb_stream_open) Invalid card 'card'
+ALSA lib confmisc.c:160:(snd_config_get_card) Invalid field card
+ALSA lib pcm_usb_stream.c:482:(_snd_pcm_usb_stream_open) Invalid card 'card'
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+JackShmReadWritePtr::~JackShmReadWritePtr - Init not done for -1, skipping unlock
+Ready to detect RFID tags...
+AUTH ERROR!!
+AUTH ERROR(status2reg & 0x08) != 0
+Tag detected: 180083598262
+Tag removed
+AUTH ERROR!!
+AUTH ERROR(status2reg & 0x08) != 0
+Tag detected: 180083598262
+Tag removed
+AUTH ERROR!!
+AUTH ERROR(status2reg & 0x08) != 0
+Tag detected: 180083598262
+AUTH ERROR!!
+AUTH ERROR(status2reg & 0x08) != 0
+AUTH ERROR!!
+AUTH ERROR(status2reg & 0x08) != 0
+AUTH ERROR!!
+AUTH ERROR(status2reg & 0x08) != 0
+AUTH ERROR!!
+AUTH ERROR(status2reg & 0x08) != 0
+Tag removed
+Tag detected: 17256004402
+Tag removed
+^C
+Exiting...
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ ls
+ 2530_AV.wav         MFRC522-python                    sounds_manager2.py
+ GUI.py             'MIKA - Relax, Take It Easy.wav'   sounds_manager.py
+ GUI_Sounds_org.py  'Never Gonna Give You Up.wav'     'Take On Me.wav'
+ GUI_Sounds.py       rfid_read.py                      venv
+ icon.png            sounds
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ nano GUI_Sounds.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ python GUI_Sounds.py
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, xcb.
+
+Aborted
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ nano GUI_Sounds.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ nano GUI_Sounds.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ nano GUI_Sounds.py
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ amixer cset numid=3 1
+numid=3,iface=MIXER,name='Master Playback Volume'
+  ; type=INTEGER,access=rw------,values=2,min=0,max=65536,step=1
+  : values=1,1
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ pyhton sounds_manager2.pyls
+-bash: pyhton: command not found
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ ls
+ 2530_AV.wav         icon.png                          sounds
+ GUI.py              MFRC522-python                    sounds_manager2.py
+ GUI_Sounds2.py     'MIKA - Relax, Take It Easy.wav'   sounds_manager.py
+ GUI_Sounds_org.py  'Never Gonna Give You Up.wav'     'Take On Me.wav'
+ GUI_Sounds.py       rfid_read.py                      venv
+admin@raspberrypi:~/Documents/DocTraining/readingRFPy $ 
+Broadcast message from root@raspberrypi on pts/2 (Thu 2025-05-08 05:34:18 HDT):
+
+The system will reboot now!
+
+Connection to raspberrypi.local closed by remote host.
+Connection to raspberrypi.local closed.
+idoofir1@Idos-MacBook-Pro-503 ~ % aplay -l
+
+zsh: command not found: aplay
+idoofir1@Idos-MacBook-Pro-503 ~ % sudo raspi-config
+
+Password:
+sudo: a password is required
+idoofir1@Idos-MacBook-Pro-503 ~ % ssh admin@raspberrypi.local
+admin@raspberrypi.local's password: 
+Linux raspberrypi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu May  8 05:36:03 2025
+admin@raspberrypi:~ $ sudo nano /boot/config.txt 
+
+  GNU nano 7.2                    /boot/config.txt                              
+# For more options and information see
+# http://rpf.io/configtxt
+# Some settings may impact device functionality. See link above for details
+
+# uncomment if you get no picture on HDMI for a default "safe" mode
+#hdmi_safe=1
+
+# uncomment the following to adjust overscan. Use positive numbers if console
+# goes off screen, and negative if there is too much border
+#overscan_left=16
+#overscan_right=16
+#overscan_top=16
+#overscan_bottom=16
+
+# uncomment to force a console size. By default it will be display's size minus
+# overscan.
+#framebuffer_width=1280
+#framebuffer_height=720
+
+# uncomment if hdmi display is not detected and composite is being output
+                               [ Read 94 lines ]
+^G Help      ^O Write Out ^W Where Is  ^K Cut       ^T Execute   ^C Location
+^X Exit      ^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To Line
