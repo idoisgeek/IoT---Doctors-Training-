@@ -12,6 +12,7 @@ from PyQt5.QtCore import Qt, pyqtSignal, QThread
 from PyQt5.QtGui import QFont
 from mfrc522 import SimpleMFRC522
 import RPi.GPIO as GPIO
+import os
 
 
 class RFIDReaderThread(QThread):
@@ -196,13 +197,16 @@ class CaseSelectorApp(QMainWindow):
         super().__init__()
         self.current_case = None
         self.current_tag_id = None
+        self.sound_map = {}
         
         # Sound mapping format: (case_id, tag_id): sound_file_path
-        self.sound_map = {
-            (1, "745502947956"): 'sounds/Take On Me.wav',
-            (2, "745502947956"): 'sounds/Never Gonna Give You Up.wav'
-            # Add more mappings as needed
-        }
+        base_path = 'sounds'
+        self.num_total_cases = len(os.listdir(base_path))
+        for case_num in os.listdir(base_path):
+                case_path = os.path.join(base_path, case_num)
+                self.sound_map[(case_num, "471368653771")] = os.path.join(case_path, "spot1.wav")
+                self.sound_map[(case_num, "236536494835")] = os.path.join(case_path, "spot2.wav")
+                # Add more mappings as needed
         
         # Initialize sound manager
         self.sound_manager = SoundManager(self.sound_map)
@@ -277,7 +281,7 @@ class CaseSelectorApp(QMainWindow):
         case_num = 1
         for row in range(3):
             for col in range(4):
-                if case_num <= 10:  # Create only 10 buttons
+                if case_num <= self.num_total_cases:  # Create only 10 buttons
                     button = QPushButton(f'Case {case_num}')
                     button.setMinimumHeight(80)
                     button.setMinimumWidth(150)
@@ -380,6 +384,7 @@ class CaseSelectorApp(QMainWindow):
         sender = self.sender()
         self.current_case = sender.case_number
         
+        
         # Update case view with selected case information
         self.case_title.setText(f'Case {self.current_case}')
         self.case_info.setText(f'You selected Case {self.current_case}.\n\n'
@@ -416,7 +421,7 @@ class CaseSelectorApp(QMainWindow):
     
     def update_sound_playback(self):
         # Create a tuple key for the sound map
-        sound_key = (self.current_case, self.current_tag_id)
+        sound_key = (f"case{self.current_case}" ,self.current_tag_id)
         
         if sound_key in self.sound_map:
             # Play the corresponding sound
