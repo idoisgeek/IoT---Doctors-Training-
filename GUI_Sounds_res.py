@@ -436,6 +436,9 @@ class CaseSelectorApp(QMainWindow):
         self.sound_status.setText('Sound Status: No sound playing')
     
     def update_sound_playback(self):
+        # Stop any currently playing sound first
+        self.sound_manager.stop_current_playback()
+        
         # Create a tuple key for the sound map
         sound_key = (f"case{self.current_case}" ,self.current_tag_id)
         
@@ -446,7 +449,6 @@ class CaseSelectorApp(QMainWindow):
             print(f"Playing sound for key: {sound_key}")
         else:
             # No sound mapping for this combination
-            self.sound_manager.stop_current_playback()
             self.sound_status.setText(f'Sound Status: No sound mapped for Case {self.current_case}, Tag {self.current_tag_id}')
             print(f"No sound mapping for key: {sound_key}")
     
