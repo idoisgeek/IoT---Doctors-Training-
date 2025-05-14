@@ -509,11 +509,16 @@ class CaseSelectorApp(QMainWindow):
         self.sound_manager.stop_event.set()
         self.rfid_thread.stop()
         self.sound_manager.join()
-        
-        # Clean up GPIO
-        GPIO.cleanup()
-        
-        # Close the application
+        try:
+            rfid_pins = [16]
+            for pin in rfid_pins:
+                try:
+                	GPIO.cleanup(pin)
+                except:
+                    pass
+        except:
+        	pass
+
         self.close()
     
     def closeEvent(self, event):
@@ -521,11 +526,16 @@ class CaseSelectorApp(QMainWindow):
         self.sound_manager.stop_event.set()
         self.rfid_thread.stop()
         self.sound_manager.join()
+        try:
+            rfid_pins = [16]
+            for pin in rfid_pins:
+                try:
+                    GPIO.cleanup(pin)
+                except:
+                    pass
+        except:
+            pass
         
-        # Clean up GPIO
-        GPIO.cleanup()
-        
-        # Accept the close event
         event.accept()
 
 
