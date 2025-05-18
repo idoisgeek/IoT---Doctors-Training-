@@ -210,6 +210,8 @@ class CaseSelectorApp(QMainWindow):
                 case_path = os.path.join(base_path, case_num)
                 self.sound_map[(case_num, "471368653771")] = os.path.join(case_path, "spot1.wav")
                 self.sound_map[(case_num, "236536494835")] = os.path.join(case_path, "spot2.wav")
+                self.sound_map[(case_num, "17256004402")] = os.path.join(case_path, "spot3.wav")
+                self.sound_map[(case_num, "247308460724")] = os.path.join(case_path, "spot4.wav")
                 # Add more mappings as needed
         
         # Initialize sound manager
